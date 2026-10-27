@@ -1,0 +1,99 @@
+.detalhes-leilao {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.detalhes-imagem {
+    width: 100%;
+    max-width: 480px;
+    height: 400px;
+    object-fit: contain;
+    background-color: #242424;
+    border-radius: 12px;
+}
+
+.detalhes-informacoes {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.detalhes-leilao form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.detalhes-leilao input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+.detalhes-leilao button {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #e2ba35;
+    color: #111;
+    cursor: pointer;
+}
+
+.detalhes-leilao button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.detalhes-leilao ul {
+    padding-left: 20px;
+}
+
+.detalhes-leilao li {
+    margin-bottom: 8px;
+}
+
+.detalhes-leilao a {
+    color: #e2ba35;
+}
+
+.resumo-leilao {
+    max-width: 480px;
+    padding: 16px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+.resumo-leilao p {
+    margin: 4px 0;
+}
+
+.tempo-leilao,
+.proximo-lance {
+    color: #e2ba35;
+    font-weight: bold;
+}
+
+
+.status-leilao {
+    color: #fff;
+    font-weight: bold;
+}
+
+.aviso-lance {
+    color: #8bd69b;
+    font-weight: bold;
+}
+
+
+.descricao-leilao {
+    color: #fff;
+}
+
+.resumo-leilao strong {
+    color: #fff;
+}

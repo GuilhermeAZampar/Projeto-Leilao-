@@ -1,0 +1,39 @@
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 24px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+}
+
+.filtros button {
+    padding: 10px 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #242424;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filtros button:hover {
+    background-color: #3b3b3b;
+}
+
+.filtros button:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 3px;
+}
+
+.filtros button.ativo {
+    background-color: #d4af37;
+    color: #171717;
+    border-color: #d4af37;
+}
