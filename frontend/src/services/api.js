@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://projeto-leilao.onrender.com";
 
 export default async function buscarLeiloes (){
     const resposta=await fetch(`${API_URL}/leiloes/`)

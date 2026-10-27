@@ -41,7 +41,7 @@ export default function Detalhes ({token}){
 
     },[id])
     useEffect(()=>{
-        const conexao = new WebSocket(`ws://127.0.0.1:8000/leiloes/${id}/ws`)
+        const conexao = new WebSocket(`wss://projeto-leilao.onrender.com/leiloes/${id}/ws`)
         conexao.onmessage=async (evento)=>{
             const mensagem=JSON.parse(evento.data)
             if(mensagem.tipo==="NOVO_LANCE"){
