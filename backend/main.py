@@ -5,11 +5,27 @@ from routes.carteira import router as carteira_router
 from routes.leilao import router as leilao_router
 from routes.obras import router as obra_router
 from routes.websocket import router as websocket_leilao
+from contextlib import asynccontextmanager
+from threading import Event, Thread
+from starlette.concurrency import run_in_threadpool
+from services.worker_leiloes import iniciar_worker
 
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    parar = Event()
+    worker = Thread(target=iniciar_worker, args=(parar,), daemon=True)
+    worker.start()
+
+    try:
+        yield
+    finally:
+        parar.set()
+        await run_in_threadpool(worker.join)
 app=FastAPI(title="Casa de Leilões da Verzel",
 description="Irei realizar o teste para Verzel e para isso farei "
-                                                  "um leilão online",version="1.0.0")
+                                                  "um leilão online",version="1.0.0",lifespan=lifespan)
 
 app.include_router(auth_router)
 app.include_router(carteira_router)
